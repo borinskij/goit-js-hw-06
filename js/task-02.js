@@ -16,18 +16,15 @@ const ingredients = [
 
 
 const lastRef = document.querySelector('#ingredients');
-// console.log(lastRef)
 
 
 const liEl = ingredients.map(element => {
-  // console.log(element)
-  const liRef = document.createElement('li');
-  // console.log(liRef)
+const liRef = document.createElement('li');
   liRef.textContent = element;
   lastRef.classList.add('item');
   return liRef
 }); 
-// console.log(...liEl)
+
 lastRef.append(...liEl);
 
 
