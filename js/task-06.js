@@ -6,10 +6,23 @@ const ref = {
 ref.inputRef.addEventListener('blur', validation);
 function validation(element) {
     if (element.target.value.length === ref.dataLengthRef) {
-        ref.inputRef.classList.add('valid');
-        ref.inputRef.classList.remove('invalid');
-        return
+        return  onAddClassRemove('valid', 'invalid');    
     }
-        ref.inputRef.classList.add('invalid');
-        ref.inputRef.classList.remove('valid');
+    return  onAddClassRemove('invalid', 'valid');
 }
+function onAddClassRemove(on, off) {
+        ref.inputRef.classList.add(on);
+        ref.inputRef.classList.remove(off);
+}
+
+
+// ref.inputRef.addEventListener('blur', validation);
+// function validation(element) {
+//     if (element.target.value.length === ref.dataLengthRef) {
+//         ref.inputRef.classList.add('valid');
+//         ref.inputRef.classList.remove('invalid');
+//         return
+//     }
+//         ref.inputRef.classList.add('invalid');
+//         ref.inputRef.classList.remove('valid');
+// }

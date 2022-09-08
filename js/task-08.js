@@ -13,12 +13,12 @@ function targetInputHandler(event) {
     event.preventDefault();
     // console.dir(event.currentTarget.elements);
     const { email, password } = event.currentTarget.elements;
-    if (!email.value || !password.value) {
-        alert('Все поля должны быть заполнены')
+    if (!email.value.trim() || !password.value.trim()) {
+       return alert('Все поля должны быть заполнены')
     }
     const userLoginData = {
-        email: email.value,
-        password: password.value,
+        email: email.value.trim(),
+        password: password.value.trim(),
     }
     console.dir(userLoginData)
     event.currentTarget.reset();
